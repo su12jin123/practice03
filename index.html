@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>index</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <script src="lib/jquery-3.7.0.min.js"></script>
+    <script>
+      $(function () {
+        $(".search_icon").click(function () {
+          $(".search_box").slideToggle(500);
+        });
+
+        //2차메뉴 실행
+        //아코디언 메뉴1
+        //.depth01 > a를 클릭했을 때 실행
+        //클릭한 선택자의 뒤에 있는 .depth02가 슬라이드 토글
+        //뒤에 있는 형제선택자 => next
+        //next()
+        $(".depth01 > a").click(function () {
+          $(this).next().slideToggle();
+          //클릭한 선택자의 뒤에 있는 형제선택자
+          $(this).toggleClass("on");
+        });
+
+        $(".menu_open").click(function () {
+          $("nav").css({'left': '0',
+        'transition':'0.7s'});
+        });
+
+        $(".menu_close").click(function () {
+         $("nav").css({'left':'-100%'});
+        });
+      });
+
+    </script>
+  </head>
+  <body>
+    <header>
+      <div class="inner">
+        <h1><a href="#">LOGO</a></h1>
+
+        <div class="menu_open">
+          <img src="img/menu.png" alt="메뉴" />
+        </div>
+        <!-- menu_open end -->
+
+        <nav>
+          <div class="menu_close">
+            <img src="img/icons8-지우다-50.png" alt="" />
+          </div>
+
+          <ul class="gnb">
+            <li class="depth01">
+              <a href="#">menu1</a>
+              <ul class="depth02">
+                <li><a href="#">menu1-1</a></li>
+                <li><a href="#">menu1-2</a></li>
+                <li><a href="#">menu1-3</a></li>
+                <li><a href="#">menu1-4</a></li>
+              </ul>
+              <!-- depth02 end -->
+            </li>
+            <!-- depth01 end -->
+
+            <li class="depth01">
+              <a href="#">menu2</a>
+              <ul class="depth02">
+                <li><a href="#">menu2-1</a></li>
+                <li><a href="#">menu2-2</a></li>
+                <li><a href="#">menu2-3</a></li>
+                <li><a href="#">menu2-4</a></li>
+              </ul>
+              <!-- depth02 end -->
+            </li>
+            <!-- depth01 end -->
+
+            <li class="depth01">
+              <a href="#">menu3</a>
+              <ul class="depth02">
+                <li><a href="#">menu3-1</a></li>
+                <li><a href="#">menu3-2</a></li>
+                <li><a href="#">menu3-3</a></li>
+                <li><a href="#">menu3-4</a></li>
+              </ul>
+              <!-- depth02 end -->
+            </li>
+            <!-- depth01 end -->
+
+            <li class="depth01">
+              <a href="#">menu4</a>
+              <ul class="depth02">
+                <li><a href="#">menu4-1</a></li>
+                <li><a href="#">menu4-2</a></li>
+                <li><a href="#">menu4-3</a></li>
+                <li><a href="#">menu4-4</a></li>
+              </ul>
+              <!-- depth02 end -->
+            </li>
+            <!-- depth01 end -->
+          </ul>
+          <!-- gnb end -->
+        </nav>
+
+        <div class="search_icon">
+          <img src="img/search.png" alt="" />
+        </div>
+        <!-- search_icon end -->
+        <div class="search_box">
+          <input type="text" placeholder="정보를 입력해 주세요." />
+          <button>검색</button>
+        </div>
+        <!-- search box end -->
+      </div>
+      <!-- inner end -->
+    </header>
+  </body>
+</html>
